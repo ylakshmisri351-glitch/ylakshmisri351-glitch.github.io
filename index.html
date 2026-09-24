@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lakshmi Sri Yatam | Software Developer</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Lakshmi Sri Yatam — aspiring software developer passionate about web development, Python, AI and problem solving."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --blue: #0078d4;
+      --dark-blue: #005a9e;
+      --navy: #071a2b;
+      --text: #1f2937;
+      --muted: #64748b;
+      --light: #f5f9fd;
+      --white: #ffffff;
+      --border: #dbe7f0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      height: 70px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(0,120,212,.15), transparent 30%),
+        linear-gradient(135deg, #f8fbff, #eef7ff);
+      padding: 110px 25px 70px;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: #e1f1ff;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: .3s;
+      border: 1px solid var(--blue);
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--blue);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--blue);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: #eef7ff;
+      transform: translateY(-2px);
+    }
+
+    /* PROFILE CARD */
+
+    .profile-card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 75, 130, .12);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      margin: auto auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0078d4, #00a4ef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .profile-card h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #475569;
+      font-size: 17px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      background: var(--light);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .skill {
+      background: white;
+      padding: 22px 10px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+      color: var(--blue);
+      box-shadow: 0 10px 25px rgba(0,120,212,.08);
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    }
+
+    .project-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e7f3ff;
+      color: var(--blue);
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tech span {
+      background: #eef5fa;
+      color: #31536b;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* INTERESTS */
+
+    .interests {
+      background: var(--light);
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .interest {
+      padding: 25px 15px;
+      text-align: center;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .interest-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .interest h3 {
+      font-size: 16px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact .section-title p {
+      color: #b8c7d6;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-btn {
+      padding: 12px 20px;
+      border: 1px solid #52708a;
+      border-radius: 8px;
+      color: white;
+      transition: .3s;
+    }
+
+    .contact-btn:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    footer {
+      background: #04111e;
+      color: #8ca3b8;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .profile-card {
+        max-width: 400px;
+        margin: auto;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 450px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="logo">LSY.</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-container">
+
+      <div>
+
+        <span class="badge">MICROSOFT HACKATHON PARTICIPANT</span>
+
+        <h1>
+          Hi, I'm <span>Lakshmi Sri</span>
+        </h1>
+
+        <h2>ASPIRING SOFTWARE DEVELOPER</h2>
+
+        <p>
+          I enjoy building practical technology solutions using web
+          development and Python. I'm passionate about AI, problem solving,
+          Data Structures & Algorithms, and continuously learning new
+          technologies.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            class="btn btn-primary"
+            href="https://github.com/ylakshmisri351-glitch"
+            target="_blank"
+          >
+            View GitHub
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://www.linkedin.com/in/Lakshmi-sri-Yatam"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+          <a class="btn btn-outline" href="#projects">
+            View Projects
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-card">
+
+        <div class="avatar">
+          LS
+        </div>
+
+        <h3>Lakshmi Sri Yatam</h3>
+
+        <p>
+          Software Developer • Python • Web Development • AI
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Learning, building and solving problems.</p>
+      </div>
+
+      <p class="about-text">
+        I am an aspiring software developer interested in creating
+        technology that can solve real-world problems. I have experience
+        working with HTML, CSS, JavaScript and Python, and I am currently
+        strengthening my knowledge of Data Structures & Algorithms and
+        backend development. Hackathons give me an opportunity to turn
+        ideas into practical solutions while learning from new challenges.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section class="skills" id="skills">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+        <p>Technologies and concepts I'm working with.</p>
+      </div>
+
+      <div class="skill-grid">
+
+        <div class="skill">Python</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">DSA</div>
+        <div class="skill">Git</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">JSON</div>
+        <div class="skill">AI</div>
+        <div class="skill">Backend</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>A few things I've been building.</p>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+
+          <div class="project-icon">🤖</div>
+
+          <h3>Smart Campus Assistant</h3>
+
+          <p>
+            An AI-powered campus assistant designed to provide useful
+            campus information through an accessible and user-friendly
+            interface.
+          </p>
+
+          <div class="tech">
+            <span>JavaScript</span>
+            <span>AI</span>
+            <span>Web Development</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-icon">📚</div>
+
+          <h3>Learn-In-Time</h3>
+
+          <p>
+            A Python command-line study tracker that records study
+            sessions, monitors study hours, tracks subject-wise progress,
+            and generates a basic focus score using locally stored JSON
+            data.
+          </p>
+
+          <div class="tech">
+            <span>Python</span>
+            <span>JSON</span>
+            <span>CLI</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTERESTS -->
+
+  <section class="interests">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <h2>What I'm Interested In</h2>
+        <p>Areas I want to explore and build in.</p>
+      </div>
+
+      <div class="interest-grid">
+
+        <div class="interest">
+          <div class="interest-icon">🤖</div>
+          <h3>Artificial Intelligence</h3>
+        </div>
+
+        <div class="interest">
+          <div class="interest-icon">🌐</div>
+          <h3>Web Development</h3>
+        </div>
+
+        <div class="interest">
+          <div class="interest-icon">⚙️</div>
+          <h3>Backend Development</h3>
+        </div>
+
+        <div class="interest">
+          <div class="interest-icon">🧩</div>
+          <h3>Problem Solving</h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+          Interested in technology, collaboration and building
+          meaningful solutions.
+        </p>
+
+      </div>
+
+      <div class="contact-links">
+
+        <a
+          class="contact-btn"
+          href="https://github.com/ylakshmisri351-glitch"
+          target="_blank"
+        >
+          GitHub
+        </a>
+
+        <a
+          class="contact-btn"
+          href="https://www.linkedin.com/in/Lakshmi-sri-Yatam"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 Lakshmi Sri Yatam • Built with HTML & CSS
+  </footer>
+
+
+  <script>
+    // Small scroll effect for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+          e.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
